@@ -6,16 +6,16 @@ const UpdateUsers = () => {
     let [state,setState]=useState({username:"",email:""})
     let navigate=useNavigate()
     let change=(e)=>{
-           setState({...state,[e.target.name]:e.target.value})
+           setState({...state,[e.target.name]:[e.target.value]})
     }
-    let {id}=useParams();
-    useEffect((id)=>{
-        axios.get("http://localhost:2050/users/"+id).then(x=>setState(x.data)).catch(()=>console.log("failed to fetch")
-        )
-    },[])
+   
+    let {id}=useParams();    
+    useEffect((x)=>{
+        axios.get("http://localhost:2020/users/"+id).then(x=>setState(x.data)).catch(()=>console.log("failed to fetch"))
+    },[id])
     let update=(e)=>{
         e.preventDefault()
-        axios.put("http://localhost:2050/users/"+id,state).then(x=>navigate("/")).catch(()=>console.log("failed to fetch"))
+        axios.put("http://localhost:2020/users/"+id,state).then(x=>navigate("/")).catch(()=>console.log("failed to fetch"))
     }
   return (
     <div className='container'>

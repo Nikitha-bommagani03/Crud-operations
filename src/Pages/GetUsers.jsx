@@ -9,7 +9,7 @@ const GetUsers = () => {
     let [keys,setKeys]=useState([])
     let navigate=useNavigate()
     useEffect(()=>{
-        axios.get("http://localhost:2050/users").then(x=>{
+        axios.get("http://localhost:2020/users").then(x=>{
             setState(x.data)
             setKeys(Object.keys(x.data[0]).splice(0,4))
         }
@@ -17,7 +17,7 @@ const GetUsers = () => {
         )
     },[state])    
     let remove=(x)=>{
-        axios.delete("http://localhost:2050/users/"+x).then(x=>navigate("/")).catch(()=>console.log("failed to fetch"))
+        axios.delete("http://localhost:2020/users/"+x).then(x=>navigate("/")).catch(()=>console.log("failed to fetch"))
     }
   return (
     <div className='body'>

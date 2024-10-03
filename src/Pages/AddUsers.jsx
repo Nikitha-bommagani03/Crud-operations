@@ -9,7 +9,7 @@ const Add = () => {
            setState({...state,[e.target.name]:e.target.value})
     }
     let adduser=()=>{
-        axios.post("http://localhost:2050/users",state).then(x=>{
+        axios.post("http://localhost:2020/users/",state).then(x=>{
             navigate("/")
         }).catch(()=>console.log("failed to fetch"))
     }

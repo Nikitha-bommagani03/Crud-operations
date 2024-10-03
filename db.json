@@ -1,9 +1,9 @@
 {
   "users": [
     {
-      "id": "1",
+      "id": 1,
       "name": "Leanne Graham",
-      "username": "rohin",
+      "username": "Bret",
       "email": "Sincere@april.biz",
       "address": {
         "street": "Kulas Light",
@@ -114,6 +114,11 @@
         "catchPhrase": "User-centric fault-tolerant solution",
         "bs": "revolutionize end-to-end systems"
       }
+    },
+    {
+      "username": "nikitha",
+      "email": "tfdvysad@knvlkd",
+      "id": "23e0"
     }
   ]
 }
